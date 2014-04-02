@@ -96,7 +96,8 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
+// Did select row at indexpath is not used if Storyboard is used
+/*
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Q6DetailViewController *dvc = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail"];
     Task *objects = [_objects objectAtIndex:[indexPath row]];
@@ -104,6 +105,7 @@
     [dvc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     [self presentViewController:dvc animated:YES completion:nil];
 }
+*/
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -124,7 +126,7 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
+        Task *object = _objects[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
