@@ -22,6 +22,7 @@
 		C09D0E6C18E6242B006E59EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09D0E4B18E6242B006E59EF /* UIKit.framework */; };
 		C09D0E7418E6242B006E59EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C09D0E7218E6242B006E59EF /* InfoPlist.strings */; };
 		C09D0E7618E6242B006E59EF /* Quiz6Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C09D0E7518E6242B006E59EF /* Quiz6Tests.m */; };
+		C09D0EB218E624AA006E59EF /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = C09D0EAF18E624AA006E59EF /* Task.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0996E0418EC9BC900DB1EF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		C0996E0518EC9BC900DB1EF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		C0996E0618EC9BC900DB1EF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		C09D0E4418E6242B006E59EF /* Quiz6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiz6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09D0E4718E6242B006E59EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C09D0E4918E6242B006E59EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,6 +60,8 @@
 		C09D0E7118E6242B006E59EF /* Quiz6Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Quiz6Tests-Info.plist"; sourceTree = "<group>"; };
 		C09D0E7318E6242B006E59EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C09D0E7518E6242B006E59EF /* Quiz6Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Quiz6Tests.m; sourceTree = "<group>"; };
+		C09D0EAF18E624AA006E59EF /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Task.m; path = ../Task.m; sourceTree = "<group>"; };
+		C09D0EB018E624AA006E59EF /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Task.h; path = ../Task.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,8 @@
 		C09D0E4D18E6242B006E59EF /* Quiz6 */ = {
 			isa = PBXGroup;
 			children = (
+				C09D0EAF18E624AA006E59EF /* Task.m */,
+				C09D0EB018E624AA006E59EF /* Task.h */,
 				C09D0E5618E6242B006E59EF /* Q6AppDelegate.h */,
 				C09D0E5718E6242B006E59EF /* Q6AppDelegate.m */,
 				C09D0E5918E6242B006E59EF /* Main.storyboard */,
@@ -217,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = C09D0E3B18E6242B006E59EF;
 			productRefGroup = C09D0E4518E6242B006E59EF /* Products */;
@@ -255,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09D0EB218E624AA006E59EF /* Task.m in Sources */,
 				C09D0E6118E6242B006E59EF /* Q6DetailViewController.m in Sources */,
 				C09D0E5E18E6242B006E59EF /* Q6MasterViewController.m in Sources */,
 				C09D0E5418E6242B006E59EF /* main.m in Sources */,
@@ -285,6 +295,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C09D0E5118E6242B006E59EF /* en */,
+				C0996E0518EC9BC900DB1EF8 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -293,6 +304,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C09D0E5A18E6242B006E59EF /* Base */,
+				C0996E0418EC9BC900DB1EF8 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C09D0E7318E6242B006E59EF /* en */,
+				C0996E0618EC9BC900DB1EF8 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -463,6 +476,7 @@
 				C09D0E7B18E6242B006E59EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C09D0E7C18E6242B006E59EF /* Build configuration list for PBXNativeTarget "Quiz6Tests" */ = {
 			isa = XCConfigurationList;
@@ -471,6 +485,7 @@
 				C09D0E7E18E6242B006E59EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

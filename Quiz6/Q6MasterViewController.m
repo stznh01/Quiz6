@@ -10,6 +10,7 @@
 
 #import "Q6DetailViewController.h"
 
+
 @interface Q6MasterViewController () {
     NSMutableArray *_objects;
 }
@@ -27,9 +28,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshView:) name:@"DetailDone" object:nil];
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void) refreshView:(NSNotification *)notification {
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +50,7 @@
     if (!_objects) {
         _objects = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [_objects insertObject:[[Task alloc] init] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -64,8 +71,13 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    Task *object = _objects[indexPath.row];
+    cell.textLabel.text = [object taskName];
+    [cell.textLabel setTextColor:[UIColor colorWithRed:[object urgency]/10.0 green:1.-([object urgency]/10.) blue:0.0 alpha:1]];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateStyle:NSDateFormatterLongStyle];
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"%@ (%.0f)", [df stringFromDate:[object dueDate]],[object urgency]];
+    
     return cell;
 }
 
@@ -85,6 +97,13 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Q6DetailViewController *dvc = [[self storyboard] instantiateViewControllerWithIdentifier:@"Detail"];
+    Task *objects = [_objects objectAtIndex:[indexPath row]];
+    [dvc setDetailItem:objects];
+    [dvc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self presentViewController:dvc animated:YES completion:nil];
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath

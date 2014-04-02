@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Task.h"
 
 @interface Q6MasterViewController : UITableViewController
-
 @end

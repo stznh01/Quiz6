@@ -1,0 +1,30 @@
+
+/* Class = "IBUILabel"; text = "Task Name"; ObjectID = "0V5-ad-ZSL"; */
+"0V5-ad-ZSL.text" = "任务名称";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "2pz-XF-uhl"; */
+"2pz-XF-uhl.text" = "标题";
+
+/* Class = "IBUIViewController"; title = "Detail"; ObjectID = "Ah7-4n-0Wa"; */
+"Ah7-4n-0Wa.title" = "细节";
+
+/* Class = "IBUILabel"; text = "Urgency: "; ObjectID = "BmZ-ib-fpL"; */
+"BmZ-ib-fpL.text" = "重要等级: ";
+
+/* Class = "IBUILabel"; text = "Due Date"; ObjectID = "JfQ-QR-qyz"; */
+"JfQ-QR-qyz.text" = "截止日期";
+
+/* Class = "IBUILabel"; text = "Subtitle"; ObjectID = "XCB-Vo-LT5"; */
+"XCB-Vo-LT5.text" = "副标题";
+
+/* Class = "IBUIButton"; normalTitle = "Save"; ObjectID = "XQ2-Hb-PuV"; */
+"XQ2-Hb-PuV.normalTitle" = "保存";
+
+/* Class = "IBUINavigationItem"; title = "Detail"; ObjectID = "cra-N8-TIN"; */
+"cra-N8-TIN.title" = "细节";
+
+/* Class = "IBUITableViewController"; title = "Master"; ObjectID = "pGg-6v-bdr"; */
+"pGg-6v-bdr.title" = "Master";
+
+/* Class = "IBUINavigationItem"; title = "My Tasks"; ObjectID = "tQt-TN-PWz"; */
+"tQt-TN-PWz.title" = "我的任务";

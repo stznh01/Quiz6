@@ -22,7 +22,7 @@
         _detailItem = newDetailItem;
         
         // Update the view.
-        [self configureView];
+        //[self configureView];
     }
 }
 
@@ -31,7 +31,10 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        [self.taskLabel setText:[self.detailItem taskName]];
+        [self.urgencySlider setValue:[self.detailItem urgency]];
+        [self.urgencyLabel setText:[NSString stringWithFormat:@"%.0f", [_urgencySlider value]]];
+        [self.datePicker setDate:[self.detailItem dueDate]];
     }
 }
 
@@ -39,6 +42,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.taskNameField setDelegate:self];
     [self configureView];
 }
 
@@ -48,4 +52,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)changeUrgency:(id)sender {
+    UISlider *s = sender;
+    [self.detailItem setUrgency:s.value];
+    [[self urgencyLabel] setText:[NSString stringWithFormat:@"%.0f",_urgencySlider.value]];
+}
+
+- (IBAction)save:(id)sender {
+    [self.detailItem setUrgency:[self.urgencySlider value]];
+    [self.detailItem setTaskName:[self.taskLabel text]];
+    [self.detailItem setDueDate:[self.datePicker date]];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:[self dismissBlock]];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 @end
